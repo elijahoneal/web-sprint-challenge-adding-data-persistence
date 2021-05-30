@@ -5,6 +5,11 @@ const getProjects = () => {
     return db('projects')
 }
 
+const createProjects = (project) => {
+    return db('projects').insert(project).then(ids => ids[0])
+}
+
 module.exports = {
-    getProjects
+    getProjects,
+    createProjects
 }
